@@ -16,4 +16,6 @@ public class Magazines extends LibraryItem{
         }
         return 0;
     }
+
+
 }
