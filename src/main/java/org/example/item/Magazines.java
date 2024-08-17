@@ -8,7 +8,7 @@ public class Magazines extends LibraryItem{
     }
 
     @Override
-    public double price(People people) {
+    public double price(People people, int durationInDays) {
         if(people.getType().equalsIgnoreCase("Worker")){
             return 0;
         } else if(people.getType().equalsIgnoreCase("Reader")){

@@ -13,7 +13,7 @@ public abstract class LibraryItem {
         this.author = author;
     }
 
-    public abstract double price(People people);
+    public abstract double price(People people, int durationInDays);
 
     public int getId() {
         return id;

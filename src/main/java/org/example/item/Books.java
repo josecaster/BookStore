@@ -8,11 +8,19 @@ public class Books extends LibraryItem{
     }
 
     @Override
-    public double price(People people) {
-        if(people.getType().equalsIgnoreCase("Worker")){
-            return 1;
-        } else if(people.getType().equalsIgnoreCase("Reader")){
-            return 6;
+    public double price(People people, int durationInDays) {
+        if(durationInDays < 30){
+            if (people.getType().equalsIgnoreCase("Worker")) {
+                return 0;
+            } else if (people.getType().equalsIgnoreCase("Reader")) {
+                return 2;
+            }
+        } else {
+            if (people.getType().equalsIgnoreCase("Worker")) {
+                return 1;
+            } else if (people.getType().equalsIgnoreCase("Reader")) {
+                return 6;
+            }
         }
         return 0;
     }

@@ -1,16 +1,32 @@
 package org.example;
 
+import com.vaadin.flow.component.page.AppShellConfigurator;
+import com.vaadin.flow.component.page.Push;
+import com.vaadin.flow.component.page.Viewport;
+import com.vaadin.flow.server.PWA;
+import com.vaadin.flow.theme.Theme;
+import com.vaadin.flow.theme.lumo.Lumo;
 import org.example.item.Books;
+import org.example.item.LibraryItemTypes;
 import org.example.item.Magazines;
 import org.example.people.People;
 import org.example.people.Reader;
 import org.example.people.Worker;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.Import;
 
 import java.util.*;
 
-public class Main {
+@SpringBootApplication
+@Theme(value = "theme1")
+@Viewport(Viewport.DEVICE_DIMENSIONS)
+@Push
+public class Main implements AppShellConfigurator {
 
     public static void main(String[] args) {
+        SpringApplication.run(Main.class, args);
         System.out.println("Hello world!");
 
         Books book1 = new Books(1,"Java programming 1","JC");
@@ -21,10 +37,10 @@ public class Main {
         Worker worker = new Worker("Ruchika", "Adhin", 1);
         Reader reader = new Reader("Deborah", "Veira", 2);
 
-        System.out.println(book1.price(worker));
-        System.out.println(book1.price(reader));
-        System.out.println(magazine1.price(worker));
-        System.out.println(magazine1.price(reader));
+        System.out.println(book1.price(worker,29));
+        System.out.println(book1.price(reader,61));
+        System.out.println(magazine1.price(worker,30));
+        System.out.println(magazine1.price(reader,30));
 
         Books[] arrayOfBooks = new Books[2];
         arrayOfBooks[0] = book1;
@@ -73,15 +89,21 @@ public class Main {
             System.out.println(mag.getTitle());
         }
 
-        for(int z = 0;  z <newListOfMagazines.size();z++){
-            Magazines mag = newListOfMagazines.get(z);
-            System.out.println(mag.getTitle());
+        for (int i = 0; i<newListOfMagazines.size(); i++){
+            Magazines magazines = newListOfMagazines.get(i);
+            System.out.println(magazines.getTitle());
         }
 
         newListOfMagazines.forEach(f -> System.out.println("New: "+f.getTitle()));
 
         newListOfMagazines.stream().sorted(Comparator.comparingInt(Magazines::getId).reversed()).forEach(f -> System.out.println("Sorted: "+f.getTitle()));
 
+        List<String> types = LibraryItemTypes.getInstance().getTypes();
+        System.out.println(types);
+
+
+        List<String> types1 = LibraryItemTypes.getInstance().getTypes();
+        System.out.println(types);
 
 
     }

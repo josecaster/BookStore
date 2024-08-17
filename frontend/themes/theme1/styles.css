@@ -1,0 +1,305 @@
+@import "theme-editor.css";
+@import url('./main-layout.css');
+@import url('./views/card-view.css');
+@import url('./views/dashboard-view.css');
+@import url('./views/sections-view.css');
+@import url('./views/batches-view.css');
+@import url('./views/items-view.css');
+@import url('./views/users-view.css');
+@import url('./views/satoshi.css');
+/*
+@import url('extrapass.css');
+@import url('extracss.css');
+*/
+
+/*@font-face {
+    font-family: Satoshi;
+    src: url("fonts/Satoshi-Variable.woff2") format("woff2");
+    font-weight: 300 900;
+    font-display: swap;
+    font-style: normal
+}*/
+
+html {
+      /*--lumo-shade-5pct: rgba(33, 33, 33, 0.05);
+      --lumo-shade-10pct: rgba(33, 33, 33, 0.1);
+      --lumo-shade-20pct: rgba(33, 33, 33, 0.2);
+      --lumo-shade-30pct: rgba(33, 33, 33, 0.3);
+      --lumo-shade-40pct: rgba(33, 33, 33, 0.4);
+      --lumo-shade-50pct: rgba(33, 33, 33, 0.5);
+      --lumo-shade-60pct: rgba(33, 33, 33, 0.6);
+      --lumo-shade-70pct: rgba(33, 33, 33, 0.7);
+      --lumo-shade-80pct: rgba(33, 33, 33, 0.8);
+      --lumo-shade-90pct: rgba(33, 33, 33, 0.9);
+      --lumo-primary-color-50pct: rgba(235, 89, 5, 0.5);
+      --lumo-primary-color-10pct: rgba(235, 89, 5, 0.1);
+      --lumo-error-color-50pct: rgba(231, 24, 24, 0.5);
+      --lumo-error-color-10pct: rgba(231, 24, 24, 0.1);
+      --lumo-success-color-50pct: rgba(62, 229, 170, 0.5);
+      --lumo-success-color-10pct: rgba(62, 229, 170, 0.1);
+      --lumo-shade: hsl(0, 0%, 13%);
+      --lumo-primary-color: hsl(22, 96%, 47%);
+      --lumo-primary-text-color: hsl(22, 100%, 42%);
+      --lumo-error-color: hsl(0, 81%, 50%);
+      --lumo-error-text-color: hsl(0, 86%, 45%);
+      --lumo-success-color: hsl(159, 76%, 57%);
+      --lumo-success-contrast-color: hsl(159, 29%, 10%);
+      --lumo-success-text-color: hsl(159, 61%, 40%);
+      --lumo-font-size: 1rem;
+      --lumo-font-size-xxxl: 1.75rem;
+      --lumo-font-size-xxl: 1.375rem;
+      --lumo-font-size-xl: 1.125rem;
+      --lumo-font-size-l: 1rem;
+      --lumo-font-size-m: 0.875rem;
+      --lumo-font-size-s: 0.8125rem;
+      --lumo-font-size-xs: 0.75rem;
+      --lumo-font-size-xxs: 0.6875rem;
+      --lumo-line-height-m: 1.4;
+      --lumo-line-height-s: 1.2;
+      --lumo-line-height-xs: 1.1;
+      --lumo-space-xl: 1.875rem;
+      --lumo-space-l: 1.25rem;
+      --lumo-space-m: 0.625rem;
+      --lumo-space-s: 0.3125rem;
+      --lumo-space-xs: 0.1875rem;
+      --lumo-size-xl: 3rem;
+      --lumo-size-l: 2.5rem;
+      --lumo-size-m: 2rem;
+      --lumo-size-s: 1.75rem;
+      --lumo-size-xs: 1.5rem;*/
+      /*--lumo-font-family: 'Inter', sans-serif;*/
+--lumo-font-family: Satoshi, system-ui, ui-sans-serif, sans-serif;
+      /*--base-h: 220;
+          --base-s: 35%;
+          --base-l: 90%;
+          --accent-h: 218;
+          --accent-s: 80%;
+          --accent-l: 47%;
+          --accent: hsl(var(--accent-h) var(--accent-s) var(--accent-l));
+          --accent-10pct: hsl(var(--accent-h) var(--accent-s) var(--accent-l) / .12);
+          --accent-text: hsl(var(--accent-h) var(--accent-s) calc(var(--accent-l) - 3%));
+          --accent-contrast: hsl(0 0% calc(100% -(100* clamp(0%, var(--accent-l) - 50%, 1%))));
+          accent-color: var(--accent);
+          --grad1: linear-gradient(to bottom right, hsl(var(--base-h) calc(var(--base-s)* 1.5) calc(var(--base-l) + 6%)) 20%, hsl(var(--base-h) var(--base-s) var(--base-l)) 50%, hsl(calc(var(--base-h) - 30) var(--base-s) calc(33% + var(--base-l) / 1.5)) 100%);
+          --grad2: radial-gradient(50% 80% at 25% 70%, hsl(calc(var(--base-h) - 5) calc(var(--base-s)* 1.5) calc(var(--base-l) - 10%) / .4) 0%, transparent 100%);
+          --grad3: radial-gradient(83% 132% at 76% 20%, transparent 84%, hsl(var(--base-h) var(--base-s) calc(var(--base-l) + 10%) / .8) 100%);
+          --bg: var(--grad3), var(--grad2), var(--grad1), hsl(var(--base-h) var(--base-s) var(--base-l));
+          --lumo-base-color: hsl(var(--base-h) var(--base-s) 100%);
+          --lumo-base-color-90pct: hsl(var(--base-h) var(--base-s) 100% / .9);
+          --lumo-base-color-80pct: hsl(var(--base-h) var(--base-s) 100% / .8);
+          --lumo-base-color-70pct: hsl(var(--base-h) var(--base-s) 99% / .7);
+          --lumo-base-color-60pct: hsl(var(--base-h) var(--base-s) 99% / .6);
+          --lumo-disabled-text-color: var(--lumo-contrast-40pct);
+          --lumo-primary-contrast-color: var(--lumo-base-color);
+          --lumo-primary-color: var(--lumo-contrast-90pct);
+          --lumo-primary-color-50pct: var(--lumo-contrast-70pct);
+          --lumo-primary-color-10pct: var(--lumo-contrast-10pct);
+          --lumo-primary-text-color: var(--lumo-body-text-color);
+          --vaadin-focus-ring-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l) / .75);
+          --lumo-error-text-color: hsl(342 70% 43%);
+          --lumo-error-color: hsl(342 68% 51%);
+          --lumo-error-color-10pct: hsl(342 68% 51% / .13);
+          --lumo-error-color-50pct: hsl(342 68% 51% / .6);
+          --lumo-success-text-color: hsl(160 98% 22%);
+          --lumo-success-color: hsl(160 88% 27%);
+          --lumo-success-color-10pct: hsl(160 88% 27% / .14);
+          --lumo-success-color-50pct: hsl(160 88% 27% / .6);
+          --lumo-tint-5pct: hsla(0, 0%, 100%, .19);
+          --lumo-tint-10pct: hsla(0, 0%, 100%, .29);
+          --lumo-tint-20pct: hsla(0, 0%, 100%, .38);
+          --lumo-tint-30pct: hsla(0, 0%, 100%, .45);
+          --lumo-tint-40pct: hsla(0, 0%, 100%, .51);
+          --lumo-tint-50pct: hsla(0, 0%, 100%, .57);
+          --lumo-tint-60pct: hsla(0, 0%, 100%, .66);
+          --lumo-tint-70pct: hsla(0, 0%, 100%, .74);
+          --lumo-tint-80pct: hsla(0, 0%, 100%, .82);
+          --lumo-tint-90pct: hsla(0, 0%, 100%, .9);
+          --lumo-tint: #fff;
+          --lumo-shade-2pct: hsl(var(--base-h) min(calc(var(--base-s)* 1.2), 35%) 41% / .04);
+          --lumo-shade-5pct: hsl(var(--base-h) min(calc(var(--base-s)* 1.12), 35%) 40% / .06);
+          --lumo-shade-10pct: hsl(var(--base-h) min(calc(var(--base-s)* 1.08), 35%) 39% / .09);
+          --lumo-shade-20pct: hsl(var(--base-h) min(calc(var(--base-s)* 1.04), 35%) 37% / .15);
+          --lumo-shade-30pct: hsl(var(--base-h) min(calc(var(--base-s)* 1), 35%) 34% / .22);
+          --lumo-shade-40pct: hsl(var(--base-h) min(calc(var(--base-s)* .96), 35%) 31% / .38);
+          --lumo-shade-50pct: hsl(var(--base-h) min(calc(var(--base-s)* .92), 35%) 28% / .55);
+          --lumo-shade-60pct: hsl(var(--base-h) min(calc(var(--base-s)* .9), 35%) 25% / .68);
+          --lumo-shade-70pct: hsl(var(--base-h) min(calc(var(--base-s)* .9), 35%) 22% / .8);
+          --lumo-shade-80pct: hsl(var(--base-h) min(calc(var(--base-s)* .8), 35%) 19% / .91);
+          --lumo-shade-90pct: hsl(var(--base-h) min(calc(var(--base-s)* .8), 35%) 16% / .98);
+          --lumo-shade: hsl(var(--base-h) min(calc(var(--base-s)* .8), 35%) 12%);
+          --lumo-font-family: Satoshi, system-ui, ui-sans-serif, sans-serif;
+          font-weight: 430;
+          --lumo-font-size-xxxl: 2rem;
+          --lumo-font-size-xxl: 1.5rem;
+          --lumo-font-size-xl: 1.25rem;
+          --lumo-font-size-l: 1.0625rem;
+          --lumo-font-size-m: .9375rem;
+          --lumo-font-size-s: .875rem;
+          --lumo-font-size-xs: .75rem;
+          --lumo-font-size-xxs: .625rem;
+          --lumo-line-height-xl: 2rem;
+          --lumo-line-height-l: 1.75rem;
+          --lumo-line-height-m: 1.625rem;
+          --lumo-line-height-s: 1.375rem;
+          --lumo-line-height-xs: 1.125rem;
+          --lumo-border-radius-l: 12px;
+          --lumo-border-radius-m: 7px;
+          --lumo-border-radius-s: 5px;
+          --lumo-size-xl: 3rem;
+          --lumo-size-l: 2.5rem;
+          --lumo-size-m: 2.125rem;
+          --lumo-size-s: 1.875rem;
+          --lumo-size-xs: 1.625rem;
+          --lumo-icon-size-l: var(--lumo-line-height-m);
+          --lumo-icon-size-m: var(--lumo-line-height-s);
+          --lumo-icon-size-s: var(--lumo-line-height-xs);
+          --view-glow: radial-gradient(circle at 25% 0%, hsl(0 0% 100% / .3), transparent 50%);
+          --view-background: var(--view-glow), hsl(var(--base-h) var(--base-s) max(calc(var(--base-l) + 10%), 90%) / .8);
+          --view-background-clip: padding-box;
+          --view-border-width: 1px;
+          --view-border-color: var(--lumo-contrast-10pct) var(--lumo-contrast-10pct) var(--lumo-contrast-20pct);
+          --view-box-shadow: 0 1px 1px 0 var(--lumo-shade-10pct);
+          --view-inset: 1vmax;
+          --vaadin-button-border-width: 1px;
+          --blur-radius: 20px;*/
+
+    }
+
+    [theme~="dark"] {
+      /*--lumo-shade-5pct: rgba(33, 33, 33, 0.05);
+      --lumo-shade-10pct: rgba(33, 33, 33, 0.1);
+      --lumo-shade-20pct: rgba(33, 33, 33, 0.2);
+      --lumo-shade-30pct: rgba(33, 33, 33, 0.3);
+      --lumo-shade-40pct: rgba(33, 33, 33, 0.4);
+      --lumo-shade-50pct: rgba(33, 33, 33, 0.5);
+      --lumo-shade-60pct: rgba(33, 33, 33, 0.6);
+      --lumo-shade-70pct: rgba(33, 33, 33, 0.7);
+      --lumo-shade-80pct: rgba(33, 33, 33, 0.8);
+      --lumo-shade-90pct: rgba(33, 33, 33, 0.9);
+      --lumo-primary-color-50pct: rgba(235, 89, 5, 0.5);
+      --lumo-primary-color-10pct: rgba(235, 89, 5, 0.1);
+      --lumo-error-color-50pct: rgba(231, 24, 24, 0.5);
+      --lumo-error-color-10pct: rgba(231, 24, 24, 0.1);
+      --lumo-success-color-50pct: rgba(62, 229, 170, 0.5);
+      --lumo-success-color-10pct: rgba(62, 229, 170, 0.1);
+      --lumo-shade: hsl(0, 0%, 13%);
+      --lumo-primary-color: hsl(22, 96%, 47%);
+      --lumo-primary-text-color: hsl(22, 100%, 42%);
+      --lumo-error-color: hsl(0, 81%, 50%);
+      --lumo-error-text-color: hsl(0, 86%, 45%);
+      --lumo-success-color: hsl(159, 76%, 57%);
+      --lumo-success-contrast-color: hsl(159, 29%, 10%);
+      --lumo-success-text-color: hsl(159, 61%, 40%);
+      --lumo-base-color: rgb(33, 33, 33);*/
+/*--lumo-font-family: 'Inter', sans-serif;*/
+
+--lumo-font-family: Satoshi, system-ui, ui-sans-serif, sans-serif;
+/*    --base-l: 6%;
+    --base-s: 22%;
+    --grad1: linear-gradient(to bottom right, hsl(var(--base-h) var(--base-s) calc(var(--base-l) + 3%)) 20%, hsl(var(--base-h) var(--base-s) calc(var(--base-l) + 0%)) 50%, hsl(calc(var(--base-h) - 10) calc(var(--base-s)* 1.2) var(--base-l)) 100%);
+    --grad2: radial-gradient(50% 80% at 25% 70%, hsl(calc(var(--base-h) - 10) calc(var(--base-s)* 1.5) calc(var(--base-l) + 10%) / .4) 0%, transparent 100%);
+    --grad3: radial-gradient(83% 132% at 76% 20%, transparent 84%, hsl(var(--base-h) var(--base-s) calc(var(--base-l) - 6%) / .8) 100%);
+    --lumo-base-color: hsl(var(--base-h) var(--base-s) max(calc(var(--base-l) + 5%), 8%) / 1);
+    --lumo-base-color-90pct: hsl(var(--base-h) var(--base-s) max(calc(var(--base-l) + 5%), 8%) / .9);
+    --lumo-base-color-80pct: hsl(var(--base-h) var(--base-s) max(calc(var(--base-l) + 5%), 8%) / .8);
+    --lumo-base-color-70pct: hsl(var(--base-h) var(--base-s) max(calc(var(--base-l) + 5%), 8%) / .7);
+    --lumo-base-color-60pct: hsl(var(--base-h) var(--base-s) max(calc(var(--base-l) + 5%), 8%) / .6);
+    --accent-h: 210;
+    --accent-10pct: hsl(var(--accent-h) var(--accent-s) var(--accent-l) / .18);
+    --accent-text: hsl(calc(var(--accent-h) - 3) calc(var(--accent-s)* 1.25) calc(var(--accent-l)* 1.3));
+    --vaadin-focus-ring-color: hsl(var(--accent-h) calc(var(--accent-s)* 1.25) calc(var(--accent-l)* 1.3) / .65);
+    --lumo-primary-contrast-color: var(--lumo-base-color);
+    --lumo-primary-color: var(--lumo-contrast-90pct);
+    --lumo-primary-color-50pct: var(--lumo-contrast-70pct);
+    --lumo-primary-color-10pct: var(--lumo-contrast-10pct);
+    --lumo-primary-text-color: var(--lumo-body-text-color);
+    --lumo-error-text-color: hsl(342 85% 70%);
+    --lumo-error-color: hsl(342 68% 51%);
+    --lumo-error-color-10pct: hsl(342 68% 61% / .16);
+    --lumo-error-color-50pct: hsl(342 68% 61% / .65);
+    --lumo-success-text-color: hsl(160 88% 52%);
+    --lumo-success-color: hsl(160 78% 31%);
+    --lumo-success-color-10pct: hsl(160 78% 37% / .18);
+    --lumo-success-color-50pct: hsl(160 78% 37% / .65);
+    --lumo-shade-2pct: hsl(var(--base-h) calc(var(--base-s)* .1) 0% / .08);
+    --lumo-shade-5pct: hsl(var(--base-h) calc(var(--base-s)* .1) 0% / .1);
+    --lumo-shade-10pct: hsl(var(--base-h) calc(var(--base-s)* .1) 1% / .2);
+    --lumo-shade-20pct: hsl(var(--base-h) calc(var(--base-s)* .1) 1% / .3);
+    --lumo-shade-30pct: hsl(var(--base-h) calc(var(--base-s)* .1) 3% / .4);
+    --lumo-shade-40pct: hsl(var(--base-h) calc(var(--base-s)* .1) 4% / .5);
+    --lumo-shade-50pct: hsl(var(--base-h) calc(var(--base-s)* .1) 5% / .6);
+    --lumo-shade-60pct: hsl(var(--base-h) calc(var(--base-s)* .1) 5% / .7);
+    --lumo-shade-70pct: hsl(var(--base-h) calc(var(--base-s)* .11) 5% / .8);
+    --lumo-shade-80pct: hsl(var(--base-h) calc(var(--base-s)* .12) 5% / .9);
+    --lumo-shade-90pct: hsl(var(--base-h) calc(var(--base-s)* .13) 5% / .95);
+    --lumo-shade: hsl(var(--base-h) calc(var(--base-s)* .1) 5%);
+    --lumo-tint-5pct: hsl(var(--base-h) calc(var(--base-s) / 2) 65% / .06);
+    --lumo-tint-10pct: hsl(var(--base-h) calc(var(--base-s) / 2) 66% / .12);
+    --lumo-tint-20pct: hsl(var(--base-h) calc(var(--base-s) / 2) 67% / .18);
+    --lumo-tint-30pct: hsl(var(--base-h) calc(var(--base-s) / 2) 69% / .29);
+    --lumo-tint-40pct: hsl(var(--base-h) calc(var(--base-s) / 2) 71% / .4);
+    --lumo-tint-50pct: hsl(var(--base-h) calc(var(--base-s) / 2) 74% / .51);
+    --lumo-tint-60pct: hsl(var(--base-h) calc(var(--base-s) / 2) 80% / .62);
+    --lumo-tint-70pct: hsl(var(--base-h) calc(var(--base-s) / 2) 83% / .75);
+    --lumo-tint-80pct: hsl(var(--base-h) calc(var(--base-s) / 2) 87% / .9);
+    --lumo-tint-90pct: hsl(var(--base-h) calc(var(--base-s) / 2) 94% / .96);
+    --lumo-tint: hsl(var(--base-h) calc(var(--base-s) / 2) 99%);
+    --view-glow: radial-gradient(circle at 25% 0%, hsl(0 0% calc(30% + var(--base-l)* 4) / .1), transparent 50%);
+    --view-background: var(--view-glow), hsl(var(--base-h) var(--base-s) max(calc(var(--base-l) + 7%), 8%) / .7);
+    --view-background-clip: border-box;
+    --view-border-color: var(--lumo-contrast-10pct) var(--lumo-contrast-5pct) var(--lumo-contrast-5pct);*/
+    }
+
+    [theme~="xxlarge"] {
+        --vaadin-avatar-size: 100px;
+    }
+
+    [theme~="xxxlarge"] {
+            --vaadin-avatar-size: 150px;
+        }
+
+        [theme~="xxxxlarge"] {
+                    --vaadin-avatar-size: 200px;
+                }
+
+
+.myborderstyle bs-column {
+        border: 1px solid;
+        margin: 5px;
+        border-radius: var(--lumo-border-radius-l);
+        padding-top: 5px;
+
+}
+
+/*.login-view vaadin-login-overlay-wrapper::part(brand) {
+  background: url("images/icon-full.png");
+  background-size: cover;
+}*/
+
+vaadin-login-overlay-wrapper::part(card){
+	width: calc(var(--lumo-size-m) * 15);
+}
+
+/*
+@media only screen and (min-width: 600px) and (orientation: landscape) {
+    vaadin-login-overlay-wrapper::part(brand) {
+        justify-content: flex-start;
+    }
+}
+@media only screen and (min-width: 600px) and (orientation: landscape) {
+    vaadin-login-overlay-wrapper::part(brand),
+        vaadin-login-overlay-wrapper::part(form)  {
+        flex: auto;
+        flex-basis: 0;
+        box-sizing: border-box;
+    }
+}
+
+@media only screen and (min-width: 600px) and (orientation: landscape) {
+    vaadin-login-overlay-wrapper::part(card) {
+        flex-direction: row;
+        align-items: stretch;
+        max-width: calc(var(--lumo-size-m)* 16);
+        width: 100%;
+    }
+}*/
