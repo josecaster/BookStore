@@ -3,9 +3,7 @@ package org.example;
 import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.component.page.Push;
 import com.vaadin.flow.component.page.Viewport;
-import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.theme.Theme;
-import com.vaadin.flow.theme.lumo.Lumo;
 import org.example.item.Books;
 import org.example.item.LibraryItemTypes;
 import org.example.item.Magazines;
@@ -14,8 +12,6 @@ import org.example.people.Reader;
 import org.example.people.Worker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.context.annotation.Import;
 
 import java.util.*;
 
@@ -27,31 +23,42 @@ public class Main implements AppShellConfigurator {
 
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    private static void extracted() {
         System.out.println("Hello world!");
 
-        Books book1 = new Books(1,"Java programming 1","JC");
-        Books book2 = new Books(3,"Java programming 2","JC");
-        Magazines magazine1 = new Magazines(2,"Java Magazine 1","JC");
-        Magazines magazine2 = new Magazines(4,"Java Magazine 2","JC");
+        Books book1 = new Books(1, "Java programming 1", "JC");
+        Books book2 = new Books(3, "Java programming 2", "JC");
+        Magazines magazine1 = new Magazines(2, "Java Magazine 1", "JC");
+        Magazines magazine2 = new Magazines(4, "Java Magazine 2", "JC");
 
         Worker worker = new Worker("Ruchika", "Adhin", 1);
         Reader reader = new Reader("Deborah", "Veira", 2);
 
-        System.out.println(book1.price(worker,29));
-        System.out.println(book1.price(reader,61));
-        System.out.println(magazine1.price(worker,30));
-        System.out.println(magazine1.price(reader,30));
+        System.out.println(book1.price(worker, 29));
+        System.out.println(book1.price(reader, 61));
+        System.out.println(magazine1.price(worker, 30));
+        System.out.println(magazine1.price(reader, 30));
 
         Books[] arrayOfBooks = new Books[2];
         arrayOfBooks[0] = book1;
         arrayOfBooks[1] = book2;
 
-        Magazines[] arrayOfMagazines = new Magazines[]{magazine1,magazine2};
+        Magazines[] arrayOfMagazines = new Magazines[]{magazine1, magazine2};
 
-        drinks(new String[]{"Cola","Sprite","Ginger"}, new String[]{"Parbo", "Heineken"});
-
-
-
+        drinks(new String[]{"Cola", "Sprite", "Ginger"}, new String[]{"Parbo", "Heineken"});
 
 
 //        // FIRST IN FIRST OUT
@@ -71,32 +78,32 @@ public class Main implements AppShellConfigurator {
         setOfNames.add(reader);
 
         Map<String, Books> mapOfBooks = new HashMap<>();
-        mapOfBooks.put("ISBN-FM000000",book1);
-        mapOfBooks.put("ISBN-FM000002",book2);
+        mapOfBooks.put("ISBN-FM000000", book1);
+        mapOfBooks.put("ISBN-FM000002", book2);
 
 
         Iterator<Magazines> iterator = listOfMagazines.iterator();
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
             Magazines next = iterator.next();
-            System.out.println(next.getTitle());
+            System.out.println(next.getNaam());
         }
 
         List<Magazines> newListOfMagazines = new ArrayList<>();
         newListOfMagazines.add(magazine1);
         newListOfMagazines.add(magazine2);
 
-        for(Magazines mag : newListOfMagazines){
-            System.out.println(mag.getTitle());
+        for (Magazines mag : newListOfMagazines) {
+            System.out.println(mag.getNaam());
         }
 
-        for (int i = 0; i<newListOfMagazines.size(); i++){
+        for (int i = 0; i < newListOfMagazines.size(); i++) {
             Magazines magazines = newListOfMagazines.get(i);
-            System.out.println(magazines.getTitle());
+            System.out.println(magazines.getNaam());
         }
 
-        newListOfMagazines.forEach(f -> System.out.println("New: "+f.getTitle()));
+        newListOfMagazines.forEach(f -> System.out.println("New: " + f.getNaam()));
 
-        newListOfMagazines.stream().sorted(Comparator.comparingInt(Magazines::getId).reversed()).forEach(f -> System.out.println("Sorted: "+f.getTitle()));
+        newListOfMagazines.stream().sorted(Comparator.comparingInt(Magazines::getId).reversed()).forEach(f -> System.out.println("Sorted: " + f.getNaam()));
 
         List<String> types = LibraryItemTypes.getInstance().getTypes();
         System.out.println(types);
@@ -104,11 +111,9 @@ public class Main implements AppShellConfigurator {
 
         List<String> types1 = LibraryItemTypes.getInstance().getTypes();
         System.out.println(types);
-
-
     }
 
-    public static void drinks(String[] softdrinks, String[] beers){
+    public static void drinks(String[] softdrinks, String[] beers) {
 
     }
 

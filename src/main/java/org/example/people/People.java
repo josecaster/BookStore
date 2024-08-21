@@ -1,8 +1,15 @@
 package org.example.people;
 
+import jakarta.persistence.*;
+
+@MappedSuperclass
 public class People {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "idgenerator")
+    // The initial value is to account for data.sql demo data ids
+    @SequenceGenerator(name = "idgenerator", initialValue = 1000)
+    private Integer id;
     private String firstName,lastName;
-    private int id;
     private String type;
 
     public People(String firstName, String lastName, int id, String type) {
@@ -28,7 +35,7 @@ public class People {
         this.lastName = lastName;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

@@ -1,7 +1,9 @@
 package org.example.item;
 
+import jakarta.persistence.Entity;
 import org.example.people.People;
 
+@Entity
 public class Magazines extends LibraryItem{
     public Magazines(int id, String title, String author) {
         super(id, title, author);

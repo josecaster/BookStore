@@ -1,12 +1,4 @@
 @import "theme-editor.css";
-@import url('./main-layout.css');
-@import url('./views/card-view.css');
-@import url('./views/dashboard-view.css');
-@import url('./views/sections-view.css');
-@import url('./views/batches-view.css');
-@import url('./views/items-view.css');
-@import url('./views/users-view.css');
-@import url('./views/satoshi.css');
 /*
 @import url('extrapass.css');
 @import url('extracss.css');
