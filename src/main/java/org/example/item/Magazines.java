@@ -5,8 +5,12 @@ import org.example.people.People;
 
 @Entity
 public class Magazines extends LibraryItem{
-    public Magazines(int id, String title, String author) {
+    public Magazines(Integer id, String title, String author) {
         super(id, title, author);
+    }
+
+    public Magazines() {
+        super();
     }
 
     @Override

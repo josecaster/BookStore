@@ -16,10 +16,17 @@ public abstract class LibraryItem {
     private String naam;
     private String author;
 
+    @Lob
+    @Column(length = 1000000)
+    private byte[] bookPdf;
+
     public LibraryItem(Integer id, String title, String author){
         this.id = id;
         this.naam = title;
         this.author = author;
+    }
+
+    public LibraryItem(){
     }
 
     public abstract double price(People people, int durationInDays);
@@ -50,5 +57,13 @@ public abstract class LibraryItem {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public byte[] getBookPdf() {
+        return bookPdf;
+    }
+
+    public void setBookPdf(byte[] bookPdf) {
+        this.bookPdf = bookPdf;
     }
 }
